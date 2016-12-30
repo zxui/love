@@ -188,7 +188,7 @@
         </article>
         <script type="text/javascript">
             var person_data = [0,0,0,0,0];
-            var result = JSON.parse(window.localStorage['result']);
+    var result = JSON.parse(window.localStorage['result']?window.localStorage['result']:JSON.stringify({'A':0,'B':0,'C':0,'D':0,'E':0}));
             person_data[0] = result['A'];
             person_data[1] = result['B'];
             person_data[2] = result['C'];
