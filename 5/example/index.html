@@ -16,50 +16,33 @@
     <script type="text/html" id="tpl_home">
 <div class="page">
     <div class="page__hd">
-        <h1 class="page__title">Article</h1>
-        <p class="page__desc">爱的五种语言</p>
+        <img src="./images/love.png" width="100%" height="100%"/>
     </div>
     <div class="page__bd">
-        <article class="weui-article">
-            <h1>爱的五种语言测试题（已婚男士用）</h1>
-            <section>
-                <section>
-                    <p>
-                        下面这些题有些陈述可能是你的妻子无法做到的，但如果他能够得到的话，在每一对陈述句中，你会选择哪一个？（在你心情放松的情况下做这个测试，尽量不要急着把它快快做完，可以用至少15—30分钟时间来完成这个测试）.
-                    </p>
-                    <p>
-                    </p>
-                </section>
-            </section>
-        </article>
-        <a href="javascript: window.pageManager.go('form');" style="width: 50%"
-           class="weui-btn weui-btn_primary">进入测试</a>
-        <a id="resetBtn" href="javascript: void(0);" onclick="person_reset()" style="width: 50%"
-           class="weui-btn weui-btn_primary">重新测试</a>
-        <a href="javascript: window.pageManager.go('result');" style="width: 50%"
-           class="weui-btn weui-btn_primary">查看结果</a>
+        <a href="javascript: window.pageManager.go('auto');" onclick="selectSex(1)" style="width: 80%"
+           class="weui-btn weui-btn_primary">已婚男士</a>
+        <a href="javascript: window.pageManager.go('auto');" onclick="selectSex(0)" style="width: 80%"
+           class="weui-btn weui-btn_primary">已婚女士</a>
     </div>
     <div class="page__ft">
         <a href="javascript:void(0)"><img src="./images/icon_footer_link.png" /></a>
     </div>
 </div>
 <script>
-    $(function(){
-        if(window.localStorage['n_index']*1==TEST_TO_MARRIED_MALE.length){
-            $('#resetBtn').show();
-        }else {
-            $('#resetBtn').hide();
+    function selectSex(v){
+        if(window.localStorage['sex']&&window.localStorage['sex']!=v){
+            person_reset();
         }
-    })
+        window.localStorage['sex'] = v;
+    }
 </script>
-
 </script>
     <script type="text/html" id="tpl_form">
 <div class="page">
     <div class="page__hd">
         <div class="weui-flex js_category">
             <p class="weui-flex__item"></p>
-            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('home');">
+            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('auto');">
         </div>
         <h1 class="page__title">爱的五种语言测试</h1>
         <p class="page__desc">在你心情放松的情况下做这个测试，尽量不要急着把它快快做完。</p>
@@ -121,15 +104,15 @@
     }
     $(function(){
         var $tooltips = $('.js_tooltips');
-        var person_data = TEST_TO_MARRIED_MALE;
-        var maxOpt = TEST_TO_MARRIED_MALE.length;
+        var person_data = TEST_DATA;
+        var maxOpt = TEST_DATA.length;
         var n=0;
         if(window.localStorage['result']){
             result =JSON.parse(window.localStorage['result']);
         }
         if(window.localStorage['n_index']){
             n = window.localStorage['n_index']*1;
-            if(n>=TEST_TO_MARRIED_MALE.length){
+            if(n>=TEST_DATA.length){
                 window.pageManager.go('finish');
             }
         }
@@ -166,7 +149,7 @@
     <div class="page__hd">
         <div class="weui-flex js_category">
             <p class="weui-flex__item"></p>
-            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('home');">
+            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('auto');">
         </div>
         <h1 class="page__title">统计结果</h1>
         <p class="page__desc">爱的五种语言</p>
@@ -188,7 +171,7 @@
         </article>
         <script type="text/javascript">
             var person_data = [0,0,0,0,0];
-    var result = JSON.parse(window.localStorage['result']?window.localStorage['result']:JSON.stringify({'A':0,'B':0,'C':0,'D':0,'E':0}));
+            var result = JSON.parse(window.localStorage['result']?window.localStorage['result']:JSON.stringify({'A':0,'B':0,'C':0,'D':0,'E':0}));
             person_data[0] = result['A'];
             person_data[1] = result['B'];
             person_data[2] = result['C'];
@@ -273,7 +256,7 @@
         <div class="weui-msg__opr-area">
             <p class="weui-btn-area">
                 <a href="javascript:window.pageManager.go('result');" class="weui-btn weui-btn_primary">查看结果</a>
-                <a href="javascript:window.pageManager.go('home');" onclick="person_reset()" class="weui-btn weui-btn_default">重新测试</a>
+                <a href="javascript:window.pageManager.go('auto');" onclick="person_reset()" class="weui-btn weui-btn_default">重新测试</a>
             </p>
         </div>
         <div class="weui-msg__extra-area">
@@ -286,6 +269,55 @@
         </div>
     </div>
 </div>
+
+</script>
+    <script type="text/html" id="tpl_auto">
+<div class="page">
+    <div class="page__hd">
+        <h1 class="page__title" style="font-size: 25px">爱的五种语言</h1>
+        <p class="page__desc"></p>
+    </div>
+    <div class="page__bd">
+        <article class="weui-article">
+            <h1 id="test_title">爱的五种语言测试题（已婚男士用）</h1>
+            <section>
+                <section>
+                    <p id="test_desc">
+                        下面这些题有些陈述可能是你的妻子无法做到的，但如果他能够得到的话，在每一对陈述句中，你会选择哪一个？（在你心情放松的情况下做这个测试，尽量不要急着把它快快做完，可以用至少15—30分钟时间来完成这个测试）.
+                    </p>
+                    <p>
+                    </p>
+                </section>
+            </section>
+        </article>
+        <a href="javascript: window.pageManager.go('form');" style="width: 50%"
+           class="weui-btn weui-btn_primary">进入测试</a>
+        <a id="resetBtn" href="javascript: void(0);" onclick="person_reset()" style="width: 50%"
+           class="weui-btn weui-btn_primary">重新测试</a>
+        <a href="javascript: window.pageManager.go('result');" style="width: 50%"
+           class="weui-btn weui-btn_primary">查看结果</a>
+    </div>
+    <div class="page__ft">
+        <a href="javascript:void(0)"><img src="./images/icon_footer_link.png" /></a>
+    </div>
+</div>
+<script>
+    $(function(){
+        if(window.localStorage['sex']==0){
+            $('#test_title').html('爱的五种语言测试题（已婚女士用）');
+            $('#test_desc').html('下面这些题有些陈述可能是你的丈夫无法做到的，但如果他能够得到的话，在每一对陈述句中，你会选择哪一个？（在你心情放松的情况下做这个测试，尽量不要急着把它快快做完，可以用至少15—30分钟时间来完成这个测试）.');
+            TEST_DATA = TEST_TO_MARRIED_FEMALE;
+        }else {
+            TEST_DATA = TEST_TO_MARRIED_MALE;
+        }
+        if(window.localStorage['n_index']*1==TEST_DATA.length){
+            $('#resetBtn').show();
+        }else {
+            $('#resetBtn').hide();
+        }
+    })
+</script>
+
 
 </script>
 
