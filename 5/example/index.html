@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
-    <title>爱的五种语言测试题（已婚男士用）</title>
+    <title>爱的五种语言</title>
     <link href="./images/favicon.ico" rel="icon" type="image/x-icon" />
     <link rel="stylesheet" href="../style/weui.css"/>
     <link rel="stylesheet" href="./example.css"/>
@@ -24,8 +24,13 @@
         <a href="javascript: window.pageManager.go('auto');" onclick="selectSex(0)" style="width: 80%"
            class="weui-btn weui-btn_primary">已婚女士</a>
     </div>
-    <div class="page__ft">
-        <a href="javascript:void(0)"><img src="./images/icon_footer_link.png" /></a>
+    <div class="weui-msg__extra-area">
+        <div class="weui-footer">
+            <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link"></a>
+            </p>
+            <p class="weui-footer__text">Copyright &copy; 2016- 湖人读书会</p>
+        </div>
     </div>
 </div>
 <script>
@@ -42,7 +47,7 @@
     <div class="page__hd">
         <div class="weui-flex js_category">
             <p class="weui-flex__item"></p>
-            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('home');">
+            <img src="./images/icon_nav_form.png" alt="返回主页" width="10%" height="10%" onclick="javascript: window.pageManager.go('auto');">
         </div>
         <h1 class="page__title">爱的五种语言测试</h1>
         <p class="page__desc">在你心情放松的情况下做这个测试，尽量不要急着把它快快做完。</p>
@@ -55,7 +60,7 @@
                     <p id="option_1"></p>
                 </div>
                 <div class="weui-cell__ft">
-                    <input type="radio" class="weui-check" name="options"
+                    <input type="radio" class="weui-check" name="options" onclick="next_test(this)"
                            id="x11">
                     <span class="weui-icon-checked"></span>
                 </div>
@@ -66,26 +71,31 @@
                     <p id="option_2"></p>
                 </div>
                 <div class="weui-cell__ft">
-                    <input type="radio" name="options" class="weui-check"
+                    <input type="radio" name="options" class="weui-check" onclick="next_test(this)"
                            id="x12">
                     <span class="weui-icon-checked"></span>
                 </div>
             </label>
         </div>
-<br/>
+<!--<br/>
 <br/>
         <div class="weui-btn-area">
             <a class="weui-btn weui-btn_primary" style="width: 50%" href="javascript:"
                id="showTooltips">下一题</a>
         </div>
-    </div>
-    <div class="page__ft">
-        <a href="javascript:void (0);"><img src="./images/icon_footer_link.png" /></a>
+    </div>-->
+    <div class="weui-msg__extra-area">
+        <div class="weui-footer">
+            <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link"></a>
+            </p>
+            <p class="weui-footer__text">Copyright &copy; 2016- 湖人读书会</p>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
     var result = {'A':0,'B':0,'C':0,'D':0,'E':0};
-
+    var n=0;
     function showOption(data){
         var keys = [];
         var values = [];
@@ -103,10 +113,6 @@
         window.pageManager.go('finish');
     }
     $(function(){
-        var $tooltips = $('.js_tooltips');
-        var person_data = TEST_TO_MARRIED_MALE;
-        var maxOpt = TEST_TO_MARRIED_MALE.length;
-        var n=0;
         if(window.localStorage['result']){
             result =JSON.parse(window.localStorage['result']);
         }
@@ -116,32 +122,28 @@
                 window.pageManager.go('finish');
             }
         }
-        $('.weui-cells__title').html('第'+(n+1)+'题(还剩余'+(maxOpt-n-1)+'题)');
-        showOption(person_data[n]);
-        $('#showTooltips').on('click', function () {
-            var val = $('input[name="options"]:checked ').val();
-            if(val){
-                result[val] += 1;
-                ++n;
-                if (n < maxOpt) {
-                    $('.weui-cells__title').html('第'+(n+1)+'题(还剩余'+(maxOpt-n-1)+'题)');
-                    showOption(person_data[n]);
-                }else {
-                    countResult();
-                }
-                $('input[name="options"]').prop('checked',false);
-                window.localStorage['result'] = JSON.stringify(result);
-                window.localStorage['n_index']=n;
-                console.log(JSON.stringify(result))
-            }else {
-                $tooltips.html('请选择选项！');
-                $tooltips.fadeIn(500);
-                setTimeout(function(){
-                    $tooltips.fadeOut(1000);
-                },3000);
-            }
-        });
+        $('.weui-cells__title').html('第'+(n+1)+'题(还剩余'+(TEST_DATA.length-n-1)+'题)');
+        showOption(TEST_DATA[n]);
+
     });
+
+    function next_test(_this){
+        var val = $(_this).val();
+        result[val] += 1;
+        ++n;
+        setTimeout(function () {
+            if (n < TEST_DATA.length) {
+                $('.weui-cells__title').html('第' + (n + 1) + '题(还剩余' + (TEST_DATA.length - n - 1) + '题)');
+                showOption(TEST_DATA[n]);
+            } else {
+                countResult();
+            }
+            $('input[name="options"]').prop('checked', false);
+        }, 600);
+        window.localStorage['result'] = JSON.stringify(result);
+        window.localStorage['n_index'] = n;
+        console.log(JSON.stringify(result))
+    }
 </script>
 </script>
     <script type="text/html" id="tpl_result">
@@ -246,8 +248,13 @@
             </div>
         </div>
     </div>
-    <div class="page__ft">
-        <a href="javascript:void(0)"><img src="./images/icon_footer_link.png" /></a>
+    <div class="weui-msg__extra-area">
+        <div class="weui-footer">
+            <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link"></a>
+            </p>
+            <p class="weui-footer__text">Copyright &copy; 2016- 湖人读书会</p>
+        </div>
     </div>
 </div>
 
@@ -271,7 +278,7 @@
                 <p class="weui-footer__links">
                     <a href="javascript:void(0);" class="weui-footer__link"></a>
                 </p>
-                <p class="weui-footer__text">Copyright &copy; 2008-2016 zxui.github.com</p>
+                <p class="weui-footer__text">Copyright &copy; 2016- 湖人读书会</p>
             </div>
         </div>
     </div>
@@ -304,8 +311,13 @@
         <a href="javascript: window.pageManager.go('result');" style="width: 50%"
            class="weui-btn weui-btn_primary">查看结果</a>
     </div>
-    <div class="page__ft">
-        <a href="javascript:void(0)"><img src="./images/icon_footer_link.png" /></a>
+    <div class="weui-msg__extra-area">
+        <div class="weui-footer">
+            <p class="weui-footer__links">
+                <a href="javascript:void(0);" class="weui-footer__link"></a>
+            </p>
+            <p class="weui-footer__text">Copyright &copy; 2016- 湖人读书会</p>
+        </div>
     </div>
 </div>
 <script>
