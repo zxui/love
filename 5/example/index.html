@@ -96,6 +96,11 @@
 <script type="text/javascript">
     var result = {'A':0,'B':0,'C':0,'D':0,'E':0};
     var n=0;
+    if(window.localStorage['sex']==0){
+        TEST_DATA = TEST_TO_MARRIED_FEMALE;
+    }else {
+        TEST_DATA = TEST_TO_MARRIED_MALE;
+    }
     function showOption(data){
         var keys = [];
         var values = [];
@@ -118,7 +123,7 @@
         }
         if(window.localStorage['n_index']){
             n = window.localStorage['n_index']*1;
-            if(n>=TEST_TO_MARRIED_MALE.length){
+            if(n>=TEST_DATA.length){
                 window.pageManager.go('finish');
             }
         }
@@ -128,6 +133,10 @@
     });
 
     function next_test(_this){
+        if(n >= TEST_DATA.length){
+            countResult();
+            return ;
+        }
         var val = $(_this).val();
         result[val] += 1;
         ++n;
@@ -139,7 +148,7 @@
                 countResult();
             }
             $('input[name="options"]').prop('checked', false);
-        }, 600);
+        }, 1);
         window.localStorage['result'] = JSON.stringify(result);
         window.localStorage['n_index'] = n;
         console.log(JSON.stringify(result))
