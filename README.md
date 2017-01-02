@@ -16,6 +16,7 @@
 　　这种简单的观念，已经帮助过数以万计的夫妇，学会以最能激起伴侣心中最深情意的方式沟通彼此的爱。发掘另一半的爱的语言，并刻意地加以表达，能够改变婚姻中情爱的氛围。
 
 ## 截图
+![](example/images/system/a1.jpg)
     <img src="example/images/system/a1.jpg" width="100%" height="100%" />
     <img src="example/images/system/a2.jpg" width="100%" height="100%" />
     <img src="example/images/system/a3.jpg" width="100%" height="100%" />
