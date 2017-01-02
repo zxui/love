@@ -1,10 +1,9 @@
 # 爱的五种语言
 
-## 在线预览：
-<a href="https://zxui.github.io/love/5/example/">https://zxui.github.io/love/5/example/</a>
+## 在线预览：[进入](https://zxui.github.io/love/5/example/)
 
 ## 前言
-爱的五种语言是什么？
+爱的五种语言是什么？<br/>
 我深信爱情只有五种基本的爱的语言，这就是我们和伴侣沟通的方式，它们是：
 　　一、肯定的言辞——发掘并在言辞中肯定对方所做的事情
 　　二、好品质的时间——付出你个人时间，像一起去散个步，共度周末
@@ -17,9 +16,9 @@
 　　这种简单的观念，已经帮助过数以万计的夫妇，学会以最能激起伴侣心中最深情意的方式沟通彼此的爱。发掘另一半的爱的语言，并刻意地加以表达，能够改变婚姻中情爱的氛围。
 
 ## 截图
-    <img src="example/images/system/a1.jpg" width="100%" height="100%">
-    <img src="example/images/system/a2.jpg" width="100%" height="100%">
-    <img src="example/images/system/a3.jpg" width="100%" height="100%">
+    (example/images/system/a1.jpg)
+    (example/images/system/a2.jpg)
+    (example/images/system/a3.jpg)
 
 献给每一对正在寻求美好婚姻的伴侣！
 from by 湖人读书会. 2017.1.1
