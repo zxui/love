@@ -15,8 +15,7 @@
 　　举例来说，如果你丈夫的爱的语言是肯定的言辞，你却给他表达爱情的礼物，他或许会想：“为什么你一直这样浪费金钱？我们负担不起这样昂贵的礼物。”而你会觉得受挫，你会想，为什么他对我所表达的爱意如此冷淡？相反的，如果你的配偶的爱的语言是收到礼物，而你却只给他肯定的言辞，那他或许会说：“请不要再说这些话了！言语是廉价的，礼物在哪里？你从来不给我任何礼物。”两者可能都是真心诚意的，但都是以自己单方的言语形态表达出来，而不是以配偶的语言表达。所以你必须要知道并且说出另一半主要的语言。
 　　这种简单的观念，已经帮助过数以万计的夫妇，学会以最能激起伴侣心中最深情意的方式沟通彼此的爱。发掘另一半的爱的语言，并刻意地加以表达，能够改变婚姻中情爱的氛围。
 
-## 截图
-![](https://zxui.github.io/love/5/example/images/favicon.ico)
+## 截图![](https://zxui.github.io/love/5/example/images/favicon.ico)
     <img src="https://zxui.github.io/love/5/example/images/system/a1.jpg" width="40%" height="40%" /><br/>
     <img src="https://zxui.github.io/love/5/example/images/system/a2.jpg" width="40%" height="40%" /><br/>
     <img src="https://zxui.github.io/love/5/example/images/system/a3.jpg" width="40%" height="40%" /><br/>
