@@ -17,9 +17,9 @@
 
 ## 截图
 
-    !<img src="https://zxui.github.io/love/5/example/images/system/a1.jpg" width="40%" height="40%" /><br/>
-    !<img src="https://zxui.github.io/love/5/example/images/system/a2.jpg" width="40%" height="40%" /><br/>
-    !<img src="https://zxui.github.io/love/5/example/images/system/a3.jpg" width="40%" height="40%" /><br/>
+    ![](<img src="https://zxui.github.io/love/5/example/images/system/a1.jpg" width="40%" height="40%" />)<br/>
+    <img src="https://zxui.github.io/love/5/example/images/system/a2.jpg" width="40%" height="40%" /><br/>
+    <img src="https://zxui.github.io/love/5/example/images/system/a3.jpg" width="40%" height="40%" /><br/>
 
 献给每一对正在寻求美好婚姻的伴侣！
 from by 湖人读书会. 2017.1.1
