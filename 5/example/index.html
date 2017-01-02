@@ -36,7 +36,8 @@
 <script>
     function selectSex(v){
         if(window.localStorage['sex']&&window.localStorage['sex']!=v){
-            person_reset();
+            window.localStorage['result'] = JSON.stringify({'A':0,'B':0,'C':0,'D':0,'E':0});
+            window.localStorage['n_index'] = 0;
         }
         window.localStorage['sex'] = v;
     }
