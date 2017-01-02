@@ -19,9 +19,9 @@
 ![](https://zxui.github.io/love/5/example/images/system/a1.jpg)
 ![](https://zxui.github.io/love/5/example/images/system/a2.jpg)
 ![](https://zxui.github.io/love/5/example/images/system/a3.jpg)
-    <img src="https://zxui.github.io/love/5/example/images/system/a1.jpg" width="100%" height="100%" />
-    <img src="https://zxui.github.io/love/5/example/images/system/a2.jpg" width="100%" height="100%" />
-    <img src="https://zxui.github.io/love/5/example/images/system/a3.jpg" width="100%" height="100%" />
+    <img src="https://zxui.github.io/love/5/example/images/system/a1.jpg" width="50%" height="50%" />
+    <img src="https://zxui.github.io/love/5/example/images/system/a2.jpg" width="50%" height="50%" />
+    <img src="https://zxui.github.io/love/5/example/images/system/a3.jpg" width="50%" height="50%" />
 
 献给每一对正在寻求美好婚姻的伴侣！
 from by 湖人读书会. 2017.1.1
